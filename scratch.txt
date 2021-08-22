@@ -1,0 +1,64 @@
+# loads yellow  spaceship
+pygame.image.load(os.path.join("Assets", "spaceship_yellow.png"))
+
+
+# rotates and resizes the spaceship images
+pygame.transform.rotate(pygame.transform.scale(YELLOW_SPACESHIP_IMAGE, (55, 40)),90)
+
+
+
+# creates a pygame window pygame.display.set_mode() takes a tuple as argument and makes a new app window .
+WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
+
+
+
+# set name of the window .
+pygame.display.set_caption("Spaceship game")
+
+
+
+
+# set the color of screen it takes rgb value as tuple .
+WINDOW.fill((255, 255, 255))
+
+
+# draws the border rectangle .
+pygame.draw.rect(WINDOW, (0, 0, 0), BORDER)
+
+
+
+# draws the spaceship .
+WINDOW.blit(YELLOW_SPACESHIP, (yellow.x, yellow.y))
+
+
+
+
+# defines clock object that controls FPS
+clock = pygame.time.Clock()
+
+
+# controls FPS
+clock.tick(60)
+
+
+
+# defines position for yellow player
+yellow = pygame.Rect(100, 300, 55, 40)
+
+
+
+
+# keep track of key press
+keys_pressed = pygame.key.get_pressed()
+
+
+
+
+# checks if we pressed left key
+if keys_pressed[pygame.K_LEFT]:
+
+
+
+
+# exit pygame window
+pygame.quit()
